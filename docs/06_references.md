@@ -1,104 +1,75 @@
 # **References and Related Work**
 
-Assistant Memory Harvesting (AMH) does not currently appear in academic literature or industry taxonomies as a named or formally defined threat category. However, several adjacent research areas partially overlap with the mechanisms underlying AMH—particularly memory leakage, semantic exposure, post-compromise agent abuse, and model or adapter exfiltration. These works provide conceptual foundations but do not directly address the post-compromise semantic interrogation of AI assistants.
+Assistant Memory Harvesting (AMH) does not currently appear in academic literature or industry taxonomies as a named or formally defined threat category. However, several adjacent research areas partially overlap with the mechanisms underlying AMH—particularly memory leakage, semantic exposure, post-compromise agent abuse, and model or adapter exfiltration. These works provide conceptual foundations but do not directly address the post-compromise semantic interrogation of memory-enabled AI assistants.
+
+Each entry below notes its **relevance** (why it is adjacent), the **overlap** with AMH, and the **gap** it leaves open.
 
 ---
 
 # **1. Memory Leakage and Memory Poisoning**
 
-### **OWASP – Agentic AI Core Security Risks (2024)**
+### **OWASP GenAI Security Project — "Agentic AI: Threats and Mitigations" / "Top 10 for Agentic Applications" (2025)**
 
-- **Relevance:** Identifies “Memory-Based Data Leakage” and “Memory Poisoning” as risks for AI agents with contextual retention.
-    
-- **Overlap:** Demonstrates the potential for unintended disclosure of sensitive context stored in agent memory.
-    
-- **Gap:** Focuses primarily on memory corruption, injection, or unintended leakage—not attacker-driven interrogation after compromise.
-    
-
-### **AIMultiple – “15 Security Threats to LLM Agents” (2025)**
-
-- **Relevance:** Discusses memory poisoning and semantic leakage scenarios in LLM-powered agents.
-    
-- **Overlap:** Acknowledges risks of exposing personal or contextual data.
-    
-- **Gap:** Primarily concerned with input manipulation; does not address post-compromise semantic extraction.
-    
+- **Link:** https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/
+- **Relevance:** Names **Memory Poisoning** as a core risk for agents with persistent memory, and recommends session-scoped memory isolation as a mitigation.
+- **Overlap:** Recognizes agent memory as a sensitive store whose contents can be disclosed or corrupted.
+- **Gap:** Frames the risk as memory *corruption/injection* by an external input, not attacker-driven *interrogation* of intact memory after the endpoint or session is compromised.
 
 ---
 
 # **2. Post-Compromise AI Abuse**
 
-### **Trend Micro – “Malicious Uses of AI” (2020)**
+### **Europol, UNICRI & Trend Micro — "Malicious Uses and Abuses of Artificial Intelligence" (November 2020)**
 
-- **Relevance:** Surveys ways attackers may misuse legitimate AI systems following system compromise.
-    
-- **Overlap:** Establishes precedent for adversarial interaction with AI systems after initial access.
-    
-- **Gap:** Does not explore extraction of user-specific semantic memory or world-modeling data.
-    
-
-### **Salesforce – LLM Security White Paper (2025)**
-
-- **Relevance:** Covers prompt injection, data poisoning, model misuse, and enterprise LLM risks.
-    
-- **Overlap:** Provides context for broader agentic AI threats.
-    
-- **Gap:** Lacks discussion of memory-enabled assistants as structured intelligence targets in post-compromise conditions.
-    
+- **Link:** https://www.europol.europa.eu/publications-events/publications/malicious-uses-and-abuses-of-artificial-intelligence
+- **Relevance:** Surveys how attackers misuse AI systems and capabilities, establishing precedent for adversarial interaction with AI following access.
+- **Overlap:** Treats AI as both an attack tool and an attack surface in criminal workflows.
+- **Gap:** Predates memory-enabled assistants; does not consider extraction of a user-specific semantic profile held by an assistant.
 
 ---
 
 # **3. Model and Adapter Exfiltration**
 
-### **Palo Alto Networks Unit 42 – “ModeLeak: Privilege Escalation to LLM Model Exfiltration in Vertex AI” (2024)**
+### **Palo Alto Networks Unit 42 — "ModeLeak: Privilege Escalation to LLM Model Exfiltration in Vertex AI" (2024)**
 
-- **Relevance:** Describes attacks that exfiltrate fine-tuned model adapters and embedded semantic knowledge following privilege escalation.
-    
-- **Overlap:** Confirms that structured semantic data becomes a target once systems are compromised.
-    
-- **Gap:** Focuses on model theft and adapter extraction, not user-context world-model extraction.
-    
+- **Link:** https://unit42.paloaltonetworks.com/privilege-escalation-llm-model-exfil-vertex-ai/
+- **Relevance:** Demonstrates exfiltration of fine-tuned model adapters and the semantic knowledge embedded in them following privilege escalation.
+- **Overlap:** Confirms that structured semantic data becomes a target once a system is compromised.
+- **Gap:** Targets model *weights/adapters*, not the assistant's accumulated world-model of an individual user.
 
 ---
 
 # **4. Privacy and Surveillance Research**
 
-### **UC Davis – “Browser Tracking by GenAI Assistants” (2024)**
+### **UCL & UC Davis — "Big Help or Big Brother? Browser Tracking by GenAI Assistants" (USENIX Security Symposium, 2025)**
 
-- **Relevance:** Shows that assistant features integrated into browsers can capture extensive personal context.
-    
-- **Overlap:** Demonstrates that AI assistants accumulate detailed user data.
-    
-- **Gap:** Investigates vendor tracking and telemetry, not adversarial interrogation after compromise.
-    
+- **Link:** https://www.ucdavis.edu/news/uc-davis-study-reveals-alarming-browser-tracking-genai-assistants
+- **Relevance:** Measures how in-browser GenAI assistants accumulate personal context, and—critically—shows several assistants generate outputs reflecting **inferred** attributes such as wealth and lifestyle. This is direct evidence for AMH's central premise: assistants derive intelligence the user never explicitly states.
+- **Overlap:** Confirms assistants build and retain rich, inferred user profiles.
+- **Gap:** Studies vendor-side data collection and telemetry, not adversarial interrogation of that profile after compromise.
 
 ---
 
-# **5. Prompt Injection, Indirect Prompting, and Assistant-Level Abuse**
+# **5. Prompt Injection and Assistant-Level Abuse**
 
-### **Gemini/Calendar “Promptware” Vulnerabilities (2024–2025)**
+### **SafeBreach Labs — "Invitation Is All You Need: Targeted Promptware Attacks Against Gemini" (Black Hat USA / DEF CON 33, 2025)**
 
-- **Sources:** SafeBreach, Bitdefender
-    
-- **Relevance:** Illustrate how malicious content can influence LLM behavior, leading to leakage or unintended actions.
-    
-- **Overlap:** Highlights risks associated with deeply integrated assistants.
-    
-- **Gap:** These are content-triggered vulnerabilities; they do not consider attacker access via compromised sessions.
-    
+- **Authors/Sources:** Ben Nassi, Stav Cohen, Or Yair. SafeBreach blog; coverage by Bitdefender.
+- **Link:** https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/
+- **Relevance:** Shows how indirect prompt injection (via a calendar invite) can hijack a deeply integrated assistant and abuse its permissions.
+- **Overlap:** Highlights the breadth of capability and data an integrated assistant exposes.
+- **Gap:** Content-triggered injection from an *external* attacker without account access; AMH instead assumes the attacker already holds an authenticated session and uses the assistant as intended.
 
 ---
 
 # **6. Hardware and Model-Level Side-Channel Attacks**
 
-### **MoEcho and Other LLM Architectural Side-Channel Research (2023–2024)**
+### **MoEcho — "Exploiting Side-Channel Attacks to Compromise User Privacy in Mixture-of-Experts LLMs" (ACM CCS, 2025)**
 
-- **Relevance:** Demonstrate how timing, cache, or GPU-level artifacts can leak training data or model internals.
-    
-- **Overlap:** Shows that LLMs can leak sensitive information through indirect channels.
-    
-- **Gap:** Targets low-level model internals, not high-level semantic memory derived from user interaction.
-    
+- **Link:** https://arxiv.org/abs/2508.15036
+- **Relevance:** Recovers user prompts and responses from architectural side-channels (cache, TLB, performance counters) in MoE models.
+- **Overlap:** Demonstrates that LLM usage can leak sensitive user information through indirect channels.
+- **Gap:** A *true* side-channel against model internals and live inference traffic—distinct from AMH, which uses the assistant's intended interface to read high-level semantic memory. (This contrast is also why this research was renamed away from "side-channel"; see the README.)
 
 ---
 
@@ -106,12 +77,8 @@ Assistant Memory Harvesting (AMH) does not currently appear in academic literatu
 
 Across all reviewed sources:
 
-- **No publication defines a threat where attackers leverage a compromised device or authenticated session to interrogate a memory-enabled AI assistant for structured personal, relational, behavioral, or operational intelligence.**
-    
-- Existing literature addresses related risks—memory leakage, prompt injection, model theft, semantic leakage—but none recognize AI assistants as **semantic intelligence repositories** vulnerable to post-compromise interrogation.
-    
-- AMH occupies a distinct conceptual space:  
-    **the extraction of synthesized, assistant-organized user context after endpoint compromise.**
-    
+- **No publication defines a threat where an attacker leverages a compromised device or authenticated session to interrogate a memory-enabled AI assistant for structured personal, relational, behavioral, or operational intelligence.**
+- Existing literature addresses related risks—memory poisoning, prompt injection, model/adapter theft, vendor-side profiling, and architectural side-channels—but none recognize the assistant's **synthesized model of the user** as a post-compromise intelligence target.
+- The UC Davis/UCL finding that assistants infer unstated attributes (wealth, lifestyle) is the closest empirical support, but it studies vendor collection, not adversarial extraction.
 
-This gap supports recognizing AMH as a novel and emerging threat category within AI and cybersecurity research.
+AMH occupies a distinct conceptual space: **the extraction of synthesized, assistant-organized, and partly inferred user context after endpoint or session compromise.** This gap supports recognizing AMH as a novel and emerging threat category within AI and cybersecurity research.
