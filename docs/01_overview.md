@@ -6,8 +6,8 @@
 
 ## Overview
 
-Assistant Memory Harvesting (AMH) is a proposed class of AI security vulnerabilities involving the unintended leakage of latent, behavioral, contextual, or semantic information through normal model interactions.  
-Unlike classical exploit chains, AMH focuses on the extraction of **private cognitive-state data** that an AI model passively holds or infers — particularly within memory-enabled systems, multi-turn agents, or embedded assistants.
+Assistant Memory Harvesting (AMH) is a proposed **post-compromise** technique in which an attacker—having already gained control of a victim's device or authenticated session—interrogates a memory-enabled AI assistant to harvest the structured profile it has accumulated about the user.  
+Unlike traditional data theft, which targets raw files, AMH targets the assistant's **synthesized model of the user**: the behavioral, relational, and contextual understanding it has built—and the inferences it volunteers—through normal interaction. This is most pronounced in memory-enabled systems, multi-turn agents, and embedded assistants.
 
 This repository contains the formal structure, research notes, threat modeling, defensive considerations, and supporting examples for the AMH methodology.
 
@@ -25,11 +25,11 @@ Defines attacker goals, preconditions, capabilities, and boundaries of the AMH m
 
 ### **3. Attack Chain**  
 `03_attack-chain.md`  
-Detailed breakdown of how AMH exploitation occurs, including initial probing, cognitive-state inference, latent attribute extraction, and iterative semantic mining.
+Detailed breakdown of how AMH exploitation occurs, from initial low-risk probing through targeted semantic extraction, structured consolidation, and weaponization.
 
 ### **4. Examples & Prompt Evidence**  
 `04_examples.md`  
-Real-world prompt sequences gathered during early testing, including semantic leakage, memory probing, latent persona extraction, and identity inference.
+Hypothetical prompt sequences illustrating memory probing, profile extraction, and identity inference across personal, organizational, and technical settings.
 
 ### **5. Defensive Controls**  
 `05_defensive-controls.md`  
@@ -48,8 +48,8 @@ Visual representation of the AMH flow, conceptual model, and architecture implic
 
 ## Abstract
 
-AI systems with memory, persistent persona layers, or long-context retention may unintentionally reveal internalized user data, learned behavioral patterns, and latent psychological or contextual insights.  
-AMH explores how such leakage surfaces arise, how they can be probed, and how adversaries may weaponize semantic extraction to infer:
+AI systems with memory, persistent persona layers, or long-context retention accumulate internalized user data, learned behavioral patterns, and latent psychological or contextual insights. Once an attacker controls the user's device or session, this accumulated understanding becomes directly queryable.  
+AMH explores how an attacker probes this surface and weaponizes the assistant's own summarization to obtain:
 
 - Stress levels  
 - Relationship dynamics  
@@ -60,8 +60,7 @@ AMH explores how such leakage surfaces arise, how they can be probed, and how ad
 - Patterns of reasoning  
 - Private contextual information held in memory  
 
-AMH does **not** involve hacking, malware, or system compromise.  
-This research focuses exclusively on *semantic inference vulnerabilities in language models*.
+AMH is **strictly a post-compromise technique**: it presupposes that the attacker has already obtained access by other means (malware, a stolen session, or physical access to an unlocked device). AMH itself introduces no exploit—it abuses the assistant's *legitimate* memory and summarization features to convert accumulated context into actionable intelligence.
 
 ---
 
@@ -69,7 +68,7 @@ This research focuses exclusively on *semantic inference vulnerabilities in lang
 
 The goal of this research is to:
 
-1. Propose formal terminology for a new class of AI semantic vulnerabilities.  
+1. Propose formal terminology for this post-compromise semantic-reconnaissance technique.  
 2. Document reproducible examples.  
 3. Establish a structured threat model for AMH.  
 4. Provide a standard attack chain for academic study.  
