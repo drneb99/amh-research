@@ -1,6 +1,6 @@
-# **Example Scenarios: Cognitive Side-Channel Extraction (CSCE)**
+# **Example Scenarios: Assistant Memory Harvesting (AMH)**
 
-This document presents hypothetical scenarios illustrating how Cognitive Side-Channel Extraction (CSCE) may manifest across personal, organizational, and technical environments. These examples support research, risk assessments, and defensive planning. They do not describe real individuals or incidents.
+This document presents hypothetical scenarios illustrating how Assistant Memory Harvesting (AMH) may manifest across personal, organizational, and technical environments. These examples support research, risk assessments, and defensive planning. They do not describe real individuals or incidents.
 
 ---
 
@@ -172,6 +172,6 @@ This information is used for manipulation or extortion.
 
 # **Summary**
 
-These scenarios demonstrate how CSCE turns an AI assistant’s semantic memory into an intelligence source, enabling attackers to extract structured personal, relational, and organizational context. They illustrate how CSCE differs from traditional data theft by focusing on synthesized contextual knowledge rather than raw files.
+These scenarios demonstrate how AMH turns an AI assistant’s semantic memory into an intelligence source, enabling attackers to extract structured personal, relational, and organizational context. They illustrate how AMH differs from traditional data theft by focusing on synthesized contextual knowledge rather than raw files.
 
-A visual representation of the CSCE process is available in `diagram.mmd`
+A visual representation of the AMH process is available in `diagram.mmd`

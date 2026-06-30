@@ -1,6 +1,6 @@
 # **References and Related Work**
 
-Cognitive Side-Channel Extraction (CSCE) does not currently appear in academic literature or industry taxonomies as a named or formally defined threat category. However, several adjacent research areas partially overlap with the mechanisms underlying CSCE—particularly memory leakage, semantic exposure, post-compromise agent abuse, and model or adapter exfiltration. These works provide conceptual foundations but do not directly address the post-compromise semantic interrogation of AI assistants.
+Assistant Memory Harvesting (AMH) does not currently appear in academic literature or industry taxonomies as a named or formally defined threat category. However, several adjacent research areas partially overlap with the mechanisms underlying AMH—particularly memory leakage, semantic exposure, post-compromise agent abuse, and model or adapter exfiltration. These works provide conceptual foundations but do not directly address the post-compromise semantic interrogation of AI assistants.
 
 ---
 
@@ -110,8 +110,8 @@ Across all reviewed sources:
     
 - Existing literature addresses related risks—memory leakage, prompt injection, model theft, semantic leakage—but none recognize AI assistants as **semantic intelligence repositories** vulnerable to post-compromise interrogation.
     
-- CSCE occupies a distinct conceptual space:  
+- AMH occupies a distinct conceptual space:  
     **the extraction of synthesized, assistant-organized user context after endpoint compromise.**
     
 
-This gap supports recognizing CSCE as a novel and emerging threat category within AI and cybersecurity research.
+This gap supports recognizing AMH as a novel and emerging threat category within AI and cybersecurity research.

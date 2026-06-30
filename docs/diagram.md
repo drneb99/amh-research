@@ -1,4 +1,4 @@
-# CSCE Attack Chain — MITRE-Style Diagram
+# AMH Attack Chain — MITRE-Style Diagram
 
 ```mermaid
 flowchart TD

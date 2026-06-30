@@ -1,8 +1,8 @@
-# **Defensive Controls for Cognitive Side-Channel Extraction (CSCE)**
+# **Defensive Controls for Assistant Memory Harvesting (AMH)**
 
 ## **Overview**
 
-Cognitive Side-Channel Extraction (CSCE) is a post-compromise reconnaissance technique in which an attacker interrogates a memory-enabled AI assistant to extract structured personal, technical, or organizational intelligence. Because CSCE requires authenticated access rather than direct model exploitation, effective defense centers on endpoint hardening, access control, memory governance, and detection engineering.
+Assistant Memory Harvesting (AMH) is a post-compromise reconnaissance technique in which an attacker interrogates a memory-enabled AI assistant to extract structured personal, technical, or organizational intelligence. Because AMH requires authenticated access rather than direct model exploitation, effective defense centers on endpoint hardening, access control, memory governance, and detection engineering.
 
 The following control strategies apply to individuals, enterprises, SOC teams, and AI system architects.
 
@@ -10,7 +10,7 @@ The following control strategies apply to individuals, enterprises, SOC teams, a
 
 # **1. Endpoint Security as the Primary Line of Defense**
 
-CSCE cannot occur without device or session compromise. Strengthening endpoint resilience is therefore the most impactful mitigation.
+AMH cannot occur without device or session compromise. Strengthening endpoint resilience is therefore the most impactful mitigation.
 
 ### **Recommended Controls**
 
@@ -31,7 +31,7 @@ CSCE cannot occur without device or session compromise. Strengthening endpoint r
 - Enforce automatic logout or inactivity timeouts
     
 
-If an adversary cannot access the session, CSCE is impossible.
+If an adversary cannot access the session, AMH is impossible.
 
 ---
 
@@ -58,7 +58,7 @@ Tightening authentication reduces the attack window.
 
 # **3. Memory and Data Hygiene**
 
-Limiting sensitive information in long-term assistant memory reduces the potential impact of CSCE.
+Limiting sensitive information in long-term assistant memory reduces the potential impact of AMH.
 
 ### **Mitigations**
 
@@ -139,9 +139,9 @@ Assistant usage should be monitored similarly to other privileged productivity t
 
 ---
 
-# **6. Incident Response Procedures for CSCE**
+# **6. Incident Response Procedures for AMH**
 
-If CSCE is suspected or confirmed, responders should:
+If AMH is suspected or confirmed, responders should:
 
 1. Immediately revoke all AI assistant sessions
     
@@ -158,13 +158,13 @@ If CSCE is suspected or confirmed, responders should:
 7. Notify stakeholders if recovered intelligence could be weaponized
     
 
-CSCE expands the potential blast radius of a compromise; IR processes must account for this added dimension.
+AMH expands the potential blast radius of a compromise; IR processes must account for this added dimension.
 
 ---
 
 # **7. Architectural Mitigations for AI Developers**
 
-AI platform providers and system architects can reduce CSCE risk through first-party design decisions.
+AI platform providers and system architects can reduce AMH risk through first-party design decisions.
 
 ### **Hard Controls**
 
@@ -194,4 +194,4 @@ Architectural design should prevent trivial access to high-context semantic memo
 
 # **Conclusion**
 
-CSCE is an emergent security risk arising from the way AI assistants store, recall, and structure long-term contextual information. Defenses must emphasize endpoint protection, authenticated access boundaries, memory governance, and detection engineering. By adopting layered controls across individuals, organizations, and AI platforms, the potential impact of CSCE can be significantly mitigated.
+AMH is an emergent security risk arising from the way AI assistants store, recall, and structure long-term contextual information. Defenses must emphasize endpoint protection, authenticated access boundaries, memory governance, and detection engineering. By adopting layered controls across individuals, organizations, and AI platforms, the potential impact of AMH can be significantly mitigated.

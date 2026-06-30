@@ -1,8 +1,8 @@
-# **Threat Model: Cognitive Side-Channel Extraction (CSCE)**
+# **Threat Model: Assistant Memory Harvesting (AMH)**
 
 ## **Introduction**
 
-Cognitive Side-Channel Extraction (CSCE) describes a post-compromise technique in which an attacker interrogates a memory-enabled AI assistant to extract structured personal, operational, or organizational intelligence. Unlike prompt injection or memory poisoning, CSCE assumes the attacker already controls the endpoint or an authenticated assistant session. The AI assistant responds as if interacting with the legitimate user, exposing accumulated context that would otherwise require extensive manual analysis.
+Assistant Memory Harvesting (AMH) describes a post-compromise technique in which an attacker interrogates a memory-enabled AI assistant to extract structured personal, operational, or organizational intelligence. Unlike prompt injection or memory poisoning, AMH assumes the attacker already controls the endpoint or an authenticated assistant session. The AI assistant responds as if interacting with the legitimate user, exposing accumulated context that would otherwise require extensive manual analysis.
 
 ---
 
@@ -10,7 +10,7 @@ Cognitive Side-Channel Extraction (CSCE) describes a post-compromise technique i
 
 ## **Required Capability Level**
 
-CSCE requires minimal technical expertise once initial compromise has occurred. The attacker only needs the ability to issue natural-language prompts to the assistant. Through normal conversation, the attacker gains access to:
+AMH requires minimal technical expertise once initial compromise has occurred. The attacker only needs the ability to issue natural-language prompts to the assistant. Through normal conversation, the attacker gains access to:
 
 - Summaries of prior interactions
     
@@ -40,7 +40,7 @@ The assistant effectively becomes an intelligence-processing interface for the a
 
 ## **Adversary Goals**
 
-Attackers leveraging CSCE may seek to:
+Attackers leveraging AMH may seek to:
 
 - Reconstruct detailed personal profiles
     
@@ -61,7 +61,7 @@ Attackers leveraging CSCE may seek to:
 
 ## **1. Endpoint or Session Compromise**
 
-CSCE requires the attacker to already control the victim’s device or authenticated session. Common paths include:
+AMH requires the attacker to already control the victim’s device or authenticated session. Common paths include:
 
 - Malware or remote access trojans
     
@@ -74,7 +74,7 @@ CSCE requires the attacker to already control the victim’s device or authentic
 - Physical access to unlocked systems
     
 
-CSCE is strictly a **post-compromise** technique.
+AMH is strictly a **post-compromise** technique.
 
 ## **2. Authenticated AI Assistant Session**
 
@@ -202,7 +202,7 @@ Habits, routines, or travel patterns may expose opportunities for surveillance, 
 
 # **Attack Constraints**
 
-Despite its effectiveness, CSCE is limited by:
+Despite its effectiveness, AMH is limited by:
 
 - The requirement for pre-existing endpoint or session compromise
     
@@ -213,13 +213,13 @@ Despite its effectiveness, CSCE is limited by:
 - The requirement for human-driven prompting rather than automated extraction
     
 
-CSCE is opportunistic, not self-propagating.
+AMH is opportunistic, not self-propagating.
 
 ---
 
 # **Threat Model Summary**
 
-Cognitive Side-Channel Extraction constitutes a distinct threat class because:
+Assistant Memory Harvesting constitutes a distinct threat class because:
 
 - It exploits **semantic knowledge**, not raw files or model internals
     

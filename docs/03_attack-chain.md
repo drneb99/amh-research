@@ -1,8 +1,8 @@
-# **Attack Chain: Cognitive Side-Channel Extraction (CSCE)**
+# **Attack Chain: Assistant Memory Harvesting (AMH)**
 
 ## **Overview**
 
-Cognitive Side-Channel Extraction (CSCE) is a post-compromise semantic reconnaissance technique. Once an attacker obtains access to a victim’s device or an authenticated AI assistant session, the assistant’s accumulated memories and contextual understanding become an exploitable intelligence surface. CSCE leverages legitimate assistant functionality — summarization, organization, and contextual reasoning — to extract structured personal, operational, and organizational information.
+Assistant Memory Harvesting (AMH) is a post-compromise semantic reconnaissance technique. Once an attacker obtains access to a victim’s device or an authenticated AI assistant session, the assistant’s accumulated memories and contextual understanding become an exploitable intelligence surface. AMH leverages legitimate assistant functionality — summarization, organization, and contextual reasoning — to extract structured personal, operational, and organizational information.
 
 This document outlines the generalized attacker workflow from compromise to intelligence exploitation.
 
@@ -10,7 +10,7 @@ This document outlines the generalized attacker workflow from compromise to inte
 
 ## **Attack Preconditions**
 
-CSCE requires:
+AMH requires:
 
 1. **A compromised endpoint or authenticated AI assistant session**
     
@@ -21,7 +21,7 @@ CSCE requires:
 4. **Historically accumulated user interactions containing meaningful personal or operational information**
     
 
-CSCE does **not** rely on jailbreaks, prompt injection, privilege escalation, or model manipulation.
+AMH does **not** rely on jailbreaks, prompt injection, privilege escalation, or model manipulation.
 
 ---
 
@@ -195,7 +195,7 @@ The attacker uses consolidated semantic intelligence to support malicious object
 - Leveraging routines, schedules, or location patterns
     
 
-CSCE significantly reduces attacker workload compared to manual document analysis or filesystem traversal.
+AMH significantly reduces attacker workload compared to manual document analysis or filesystem traversal.
 
 ---
 
@@ -218,7 +218,7 @@ CSCE significantly reduces attacker workload compared to manual document analysi
 
 # **Distinction From Existing Threats**
 
-CSCE is separate from:
+AMH is separate from:
 
 - Prompt injection
     
@@ -233,11 +233,11 @@ CSCE is separate from:
 - Fine-tuned model exfiltration
     
 
-CSCE relies on **post-compromise access** and abuses the assistant’s **legitimate functionality** rather than exploiting model vulnerabilities.
+AMH relies on **post-compromise access** and abuses the assistant’s **legitimate functionality** rather than exploiting model vulnerabilities.
 
 The core differentiator:
 
-> **CSCE targets the assistant’s cognitive layer — its structured semantic understanding of the user — rather than raw data or model internals.**
+> **AMH targets the assistant’s cognitive layer — its structured semantic understanding of the user — rather than raw data or model internals.**
 > 
 > This attack-chain analysis directly informs the defensive recommendations described in `05_defensive-controls.md`  and should be read alongside the threat model for full context.
 

@@ -1,14 +1,16 @@
-# **Cognitive Side-Channel Extraction (CSCE)**
+# **Assistant Memory Harvesting (AMH)**
 
 ### _An Emerging Post-Compromise Semantic-Intelligence Threat in AI-Assisted Environments_
 
+> **Note:** This work was formerly explored under the name **Cognitive Side-Channel Extraction (CSCE)**. It has been renamed to **Assistant Memory Harvesting (AMH)** for technical accuracy — the technique is post-compromise abuse of a legitimate assistant feature, not a true side-channel.
+
 ## **Overview**
 
-Cognitive Side-Channel Extraction (CSCE) is a proposed threat category describing how an attacker—after compromising a victim’s endpoint or authenticated session—can interrogate a memory-enabled AI assistant to extract structured, high-value semantic intelligence.
+Assistant Memory Harvesting (AMH) is a proposed threat category describing how an attacker—after compromising a victim’s endpoint or authenticated session—can interrogate a memory-enabled AI assistant to extract structured, high-value semantic intelligence.
 
-Modern AI assistants often retain summaries of user behavior, preferences, relationships, routines, and operational details. Once a device or session is compromised, this synthesized contextual knowledge becomes an intelligence-rich side-channel available to adversaries.
+Modern AI assistants often retain summaries of user behavior, preferences, relationships, routines, and operational details. Once a device or session is compromised, this synthesized contextual knowledge becomes an intelligence-rich surface available to adversaries.
 
-CSCE is **not** prompt injection, memory poisoning, or model exfiltration.  
+AMH is **not** prompt injection, memory poisoning, or model exfiltration.  
 It is a **post-compromise semantic reconnaissance technique** that leverages the assistant’s accumulated understanding of the user.
 
 This repository defines the concept, its threat model, attack sequence, potential impact, and associated defensive strategies.
@@ -19,7 +21,7 @@ This repository defines the concept, its threat model, attack sequence, potentia
 
 ---
 
-## **What Makes CSCE Distinct**
+## **What Makes AMH Distinct**
 
 Traditional data exfiltration focuses on raw assets:
 
@@ -36,7 +38,7 @@ Traditional data exfiltration focuses on raw assets:
 - source code
     
 
-CSCE instead targets the assistant’s **internal semantic model of the user**—a distilled and searchable representation generated through normal interaction.
+AMH instead targets the assistant’s **internal semantic model of the user**—a distilled and searchable representation generated through normal interaction.
 
 This model may contain:
 
@@ -54,11 +56,11 @@ This model may contain:
     
 
 AI assistants convert fragmented information into coherent summaries.  
-CSCE exploits this synthesis rather than raw data stores.
+AMH exploits this synthesis rather than raw data stores.
 
 ---
 
-## **Why CSCE Matters**
+## **Why AMH Matters**
 
 As AI assistants gain:
 
@@ -75,7 +77,7 @@ they increasingly function as **compressed personal knowledge bases**.
 
 During a breach, they act as high-bandwidth intelligence surfaces, enabling attackers to extract meaningfully structured insights far more efficiently than traditional forensic or manual search methods.
 
-CSCE reframes the impact of post-compromise access:
+AMH reframes the impact of post-compromise access:
 
 - **Old question:** “What files were accessed?”
     
@@ -89,16 +91,16 @@ This shift has implications for personal security, enterprise risk, insider-thre
 ## **Repository Structure**
 
 - **`01_overview.md` — Overview**  
-    Conceptual introduction and high-level framing of CSCE.
+    Conceptual introduction and high-level framing of AMH.
     
 - **`02_threat-model.md` — Threat Model**  
     Adversary profiles, preconditions, and assets at risk.
     
 - **`03_attack-chain.md` — Attack Sequence**  
-    Generalized kill-chain describing CSCE exploitation.
+    Generalized kill-chain describing AMH exploitation.
     
 - **`04_examples.md` — Example Scenarios**  
-    Hypothetical cases illustrating CSCE across environments.
+    Hypothetical cases illustrating AMH across environments.
     
 - **`05_defensive-controls.md` — Mitigation Strategies**  
     Controls for individuals, enterprises, SOC teams, and AI platform designers.
@@ -107,7 +109,7 @@ This shift has implications for personal security, enterprise risk, insider-thre
     Sources describing partially overlapping AI security risks.
     
 - **`diagram.mmd` — Visual Model**  
-    Mermaid diagram depicting the CSCE process.
+    Mermaid diagram depicting the AMH process.
     
 - **`license` — MIT License**  
     Open-use licensing for research and derivative work.
