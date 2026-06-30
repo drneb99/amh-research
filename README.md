@@ -55,8 +55,9 @@ This model may contain:
 - psychological or emotional cues
     
 
-AI assistants convert fragmented information into coherent summaries.  
-AMH exploits this synthesis rather than raw data stores.
+AI assistants convert fragmented information into coherent summaries—and go further, **inferring** attributes the user never explicitly stated: emotional state, relationship friction, financial pressure, risk tolerance, daily rhythm.
+
+This is what makes AMH categorically different from data theft, not merely more convenient than it. Raw exfiltration is bounded by what the user wrote down; AMH also yields the assistant's *derived* conclusions about the user—intelligence that exists in no file, email, or document on the device. An attacker reading stolen files must still infer the person behind them. An attacker querying the assistant is handed those inferences directly.
 
 ---
 
