@@ -13,6 +13,10 @@ It is a **post-compromise semantic reconnaissance technique** that leverages the
 
 This repository defines the concept, its threat model, attack sequence, potential impact, and associated defensive strategies.
 
+**Author:** Ben Phelps
+
+> This repository supersedes the original `caleb-branton/csce-research` repo, which is no longer accessible. All content here is the same original research, re-hosted under the author's primary account.
+
 ---
 
 ## **What Makes CSCE Distinct**

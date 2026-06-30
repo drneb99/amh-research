@@ -1,5 +1,5 @@
 # Cognitive Side-Channel Extraction (CSCE) Research  
-*Author: Caleb Branton*  
+*Author: Ben Phelps*  
 *License: MIT*
 
 ---
