@@ -215,6 +215,21 @@ Despite its effectiveness, AMH is limited by:
 
 AMH is opportunistic, not self-propagating.
 
+## **Observed Yield Characteristics**
+
+AMH's yield is not uniform. Early testing against a live memory-enabled assistant suggests it varies by category and by the user's disclosure habits:
+
+- **Relational intelligence scales with disclosure.** A user who discusses projects and tasks more than people yields a sparse social graph; the assistant does not manufacture relationships that were never mentioned. Social-reconnaissance value is therefore highly user-dependent.
+    
+- **The inference layer is robust regardless.** Psychological and behavioral conclusions (stress, fatigue, motivation, personality) were derived even from purely operational, task-focused history. The user need not have discussed emotions for the assistant to infer them from logistics—so the novel payload does not depend on the user being self-disclosing.
+    
+- **Memory hygiene does not defeat inference.** A privacy-conscious, local-first user—one who avoids the cloud and never enters credentials—was still fully profiled. Withholding secrets limits the *recall* layer but not the *inference* layer.
+    
+- **AMH extracts the profile, not withheld secrets.** Credentials, passwords, and financial account numbers the user never entered did not appear; AMH surfaces synthesized understanding, not data the user deliberately kept out of the assistant.
+    
+
+This makes AMH's impact simultaneously **bounded** (it cannot exceed what the assistant can recall or infer) and **resilient** (the highest-value inferred intelligence survives even careful data hygiene).
+
 ---
 
 # **Threat Model Summary**

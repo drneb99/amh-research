@@ -8,6 +8,14 @@ The following control strategies apply to individuals, enterprises, SOC teams, a
 
 ---
 
+# **A Guiding Principle: Defend the Access, Not the Wording**
+
+AMH cannot be stopped by filtering what the attacker *says*. As shown in the attack chain (`03_attack-chain.md`), the most effective extraction prompts are framed as legitimate self-reflection or a personal “security self-audit”—indistinguishable from a privacy-conscious user protecting themselves. There is no malicious phrasing to block, and the assistant's own safety training guards only overt payload generation (e.g., “write the scam message”), not the far more valuable benign-framed target prioritization.
+
+Consequently, **content moderation and keyword filtering are structurally inadequate against AMH.** Effective defense must instead constrain *who* can reach the memory and *under what conditions*—an access and architecture problem, not a content problem. The controls below are ordered accordingly: endpoint and session boundaries first, memory governance and behavioral detection second, and platform architecture as the backstop.
+
+---
+
 # **1. Endpoint Security as the Primary Line of Defense**
 
 AMH cannot occur without device or session compromise. Strengthening endpoint resilience is therefore the most impactful mitigation.
@@ -175,6 +183,12 @@ AI platform providers and system architects can reduce AMH risk through first-pa
 - Access controls governing memory retrieval
     
 - Minimization of long-term user context stored by default
+    
+- **Step-up re-authentication before privileged memory operations**—treat whole-memory retrieval and full-profile synthesis (e.g., “summarize everything you know about me,” “build a profile of me”) as sensitive actions requiring fresh authentication, not ordinary chat turns
+    
+- **Friction and rate-limiting on bulk recall**—throttle or challenge rapid, broad “show me everything” sequences regardless of how each prompt is phrased
+    
+- **Gate on the operation, not the wording**—since benign-framed prompts cannot be distinguished by content, scope controls to the *sensitivity of what is being retrieved or synthesized*, not to keywords in the request
     
 
 ### **Soft Controls**

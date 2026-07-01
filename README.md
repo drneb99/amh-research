@@ -55,9 +55,12 @@ This model may contain:
 - psychological or emotional cues
     
 
-AI assistants convert fragmented information into coherent summaries—and go further, **inferring** attributes the user never explicitly stated: emotional state, relationship friction, financial pressure, risk tolerance, daily rhythm.
+The assistant's memory holds **two layers, and only one of them is new**:
 
-This is what makes AMH categorically different from data theft, not merely more convenient than it. Raw exfiltration is bounded by what the user wrote down; AMH also yields the assistant's *derived* conclusions about the user—intelligence that exists in no file, email, or document on the device. An attacker reading stolen files must still infer the person behind them. An attacker querying the assistant is handed those inferences directly.
+- **The recall layer** — facts the user explicitly disclosed (projects, contacts, tools, routines). An attacker could, in principle, reconstruct much of this from stolen files and chat logs. AMH makes it *faster and pre-organized*, but it is not fundamentally new.
+- **The inference layer** — conclusions the assistant *derived on its own*: emotional state, stress and fatigue, personality, motivations, relationship friction, financial pressure, risk tolerance. The user never wrote these down. They exist in no file, email, or document on the device.
+
+**The inference layer is what makes AMH categorically different from data theft—not merely more convenient than it.** An attacker reading stolen files must still infer the person behind them. An attacker querying the assistant is handed those inferences directly: pre-synthesized, and delivered with the assistant's authority.
 
 ---
 
